@@ -1,0 +1,30 @@
+package Dice.i
+
+import android.support.v7.app.AppCompatActivity
+import android.os.Bundle
+import android.widget.Button
+import android.widget.SeekBar
+import android.widget.TextView
+import java.util.*
+
+class MainActivity : AppCompatActivity() {
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+      val rollbutton = findViewById<Button>(R.id.rollbutton)
+        val Resultstextview = findViewById<TextView>(R.id.Resultstextview)
+        val seekBar = findViewById<SeekBar>(R.id.seekBar)
+
+
+        rollbutton.setOnClickListener{
+            val rand = Random().nextInt(seekBar.progress) + 1
+            Resultstextview.text = rand.toString()
+        }
+
+
+    }
+
+    }
+
